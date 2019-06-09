@@ -5,13 +5,22 @@ import { Constants } from 'expo';
 export default class CityList extends React.Component {
   static navigationOptions = {
     title: 'Cities',
-  };
+    headerStyle: {
+      backgroundColor: '#d9e1e8',
+    },
+    headerTintColor: '#fff',
+    headerTitleStyle: {
+        fontSize: 25,
+      fontWeight: 'bold',
+    },
+    };
 
   constructor(props) {
     super(props);
 
     this.state = {
       cities: [],
+      alpahbet:[],
     };
   }
 
@@ -33,6 +42,7 @@ export default class CityList extends React.Component {
         city: item
       }
     );
+    console.log('Selected city = ', item);
   }
 
   renderItem(city) {
@@ -42,6 +52,7 @@ export default class CityList extends React.Component {
       </TouchableOpacity>
     );
   }
+
 
   render() {
     return (
@@ -57,8 +68,7 @@ export default class CityList extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    marginTop: Constants.statusBarHeight,
+    backgroundColor: '#f8ecc9',
   },
 
   item: {
@@ -67,10 +77,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
 
     borderWidth: 1,
-    borderColor: 'orange',
+    borderColor: '#fff',
   },
   text: {
-    fontSize: 20,
+    fontSize: 15,
     textAlign: 'center',
+    color:'#D499B9',
+    fontWeight:'bold',
   }
 });
